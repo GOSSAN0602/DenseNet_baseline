@@ -21,18 +21,18 @@ from libs.plot import plot_loss
 from tqdm import tqdm
 
 
-parser = argparse.ArgumentParser(description='Training DenseNet201 with Cell Images')
+parser = argparse.ArgumentParser(description='Training DenseNet201')
 parser.add_argument('--tag',type=str)
 parser.add_argument('--lr',type=float)
 parser.add_argument('--n_epochs',type=int)
 args = parser.parse_args()
 
 #config
-path_data='/home/shuki_goto/input/'
+path_data='../cell/input/'
 device='cuda'
 batch_size=32
-SAVE_PATH = '/home/shuki_goto/cell/log/'+args.tag+'/'
-os.mkdir('/home/shuki_goto/cell/log/'+args.tag)
+SAVE_PATH = '../cell/log/'+args.tag+'/'
+os.mkdir('../cell/log/'+args.tag)
 
 #define dataset
 ds = ImagesDS(path_data+'train.csv', path_data+'imgs')
